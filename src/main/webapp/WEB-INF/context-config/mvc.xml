@@ -6,8 +6,8 @@
 
 
     <mvc:annotation-driven/>
-    <context:component-scan base-package="ua.skillsup.chat.controller"/>
-    <mvc:resources mapping="/resources/**" location="WEB-INF/resources"/>
+    <context:component-scan base-package="ua.skillsup.chat.web.rest.controller"/>
+    <mvc:resources mapping="/resources/**" location="/WEB-INF/resources/"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/>

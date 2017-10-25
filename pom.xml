@@ -6,6 +6,7 @@
 
     <groupId>ua.skillsup</groupId>
     <artifactId>course-project-chat</artifactId>
+    <name>Chat</name>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -13,6 +14,7 @@
         <!-- compiler configuration -->
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+
         <spring-core.version>4.3.10.RELEASE</spring-core.version>
         <org.slf4j.version>1.7.25</org.slf4j.version>
         <log4j.version>1.2.17</log4j.version>
@@ -94,4 +96,25 @@
             <version>${log4j.version}</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <!-- to run with maven: clean package jetty:run -->
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.4.7.RC0</version>
+
+                <configuration>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <httpConnector>
+                        <port>9999</port>
+                    </httpConnector>
+                    <webApp>
+                        <contextPath>/chat</contextPath>
+                    </webApp>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
