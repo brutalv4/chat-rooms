@@ -7,27 +7,29 @@
 <head>
     <title>Login</title>
     <%-- see mvc:resources mapping in mvc.xml --%>
-    <link href="<c:url value="/resources/home/css/reset.css"/>" rel="stylesheet" />
-    <link href="<c:url value="/resources/home/css/structure.css"/>" rel="stylesheet" />
+    <link href="<c:url value="/resources/login/reset.css"/>" rel="stylesheet" />
+    <link href="<c:url value="/resources/login/structure.css"/>" rel="stylesheet" />
 </head>
 <body>
 
-<form:form method="post" commandName="user" action="submit-login" class="box login">
+<form:form method="post" commandName="currentUser" action="submit-login" class="box login">
     <fieldset class="boxBody">
-        <form:label path="name">Username:</form:label>
+        <%--<form:label path="name">Username:</form:label>--%>
         <form:input type="text" path="name" placeholder="Username" tabindex="1" required="true"/>
 
-        <form:label path="password"><a href="#" class="rLink" tabindex="5">Forgot your password?</a>Password:</form:label>
-        <form:password path="password" placeholder="Password" tabindex="2" required="true"/>
+        <%--<form:label path="password"><a href="#" class="rLink" tabindex="5">Forgot your password?</a>Password:</form:label>--%>
+        <form:password path="password" placeholder="Password" tabindex="5" required="true"/>
     </fieldset>
 
-    <footer> <label><input type="checkbox" tabindex="3">Keep me logged in</label>
+    <footer>
+        <%-- not yet implemeneted --%>
+        <%--<label><input type="checkbox" tabindex="3">Keep me logged in</label>--%>
         <input type="submit" class="btnLogin" value="Login" tabindex="4">
     </footer>
 </form:form>
 
 <footer id="main">
-    Simple chat application (course project) |
+    Simple ChatRooms application (course project) |
     <a href="http://skillsup.ua/training/courses/diving-into-java/root/diving-into-java-practice-i/">
         Diving into Java (practice 1)</a> |
     <a href="http://skillsup.ua/">skillsup.ua</a>
